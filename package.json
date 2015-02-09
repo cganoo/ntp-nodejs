@@ -1,40 +1,49 @@
 {
-    "name": "ntp-nodejs",
-    "version": "0.0.1",
-    "description": "A Node.js implementation of a simple NTP service with 1 Producer and multiple Consumers",
-    "keywords": ["Node.js", "socket.io"],
-    "homepage": "https://github.com/cganoo/ntp-nodejs",
-    "author": {
-        "name": "Chaitanya Ganoo",
-        "email": "chaitanyaganoo9@gmail.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/cganoo/ntp-nodejs.git"
-    },
-    "engines": {
-        "node": ">= 0.6.0",
-        "npm": ">= 1.0.0"
-    },
-
-    "dependencies": {
-        "async": "0.9.0",
-        "underscore": "1.7.0",
-        "socket.io": "latest",
-        "socket.io-client": "latest",
-        "express": "4.10.2",
-        "cron": "1.0.0",
-        "moment": "2.9.0",
-        "sprintf-js": "1.0.2",
-        "commander": "2.6.0"
-    },
-    "devDependencies": {},
-    "bundleDependencies": [],
-
-    "scripts": {
-        "start": "node server.js client.js --log-level=1"
-    },
-
-    "private": true,
-    "main": "server.js"
+  "name": "ntp-nodejs",
+  "version": "0.0.1",
+  "description": "A Node.js implementation of a simple NTP service with 1 Producer and multiple Consumers",
+  "keywords": [
+    "Node.js",
+    "socket.io"
+  ],
+  "homepage": "https://github.com/cganoo/ntp-nodejs",
+  "author": {
+    "name": "Chaitanya Ganoo",
+    "email": "chaitanyaganoo9@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cganoo/ntp-nodejs.git"
+  },
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+  "dependencies": {
+    "async": "0.9.0",
+    "underscore": "1.7.0",
+    "socket.io": "latest",
+    "socket.io-client": "latest",
+    "cron": "1.0.0",
+    "moment": "2.9.0",
+    "sprintf-js": "1.0.2",
+    "commander": "2.6.0"
+  },
+  "devDependencies": {
+    "jshint": "2.6.0",
+    "mocha": "2.1.0",
+    "chai": "1.10.0",
+    "should": "4.6.5",
+    "istanbul": "0.3.5"
+  },
+  "bundleDependencies": [],
+  "scripts": {
+    "lint": "jshint ./lib/ ./test/",
+    "start-producer": "node ./lib/producer.js",
+    "start-consumers": "node ./lib/consumer.js --consumers 2",
+    "test": "mocha test",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- test/*.js"
+  },
+  "private": true,
+  "main": "server.js"
 }
