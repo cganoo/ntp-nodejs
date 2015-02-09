@@ -7,13 +7,8 @@ A Node.js implementation of a simple NTP service with 1 Producer and multiple Co
 
 ### Satisfy Dependencies
 
-Essential:
-
-* [Node](http://nodejs.org/)
-
-It is recommended to also use the following for experimenting with the source code:
-
-* [IntelliJ](https://www.jetbrains.com/idea/)
+* Essential: [Node](http://nodejs.org/)
+* Optional: Use latest [IntelliJ](https://www.jetbrains.com/idea/) with [Node.js support](https://www.jetbrains.com/idea/help/node-js.html) for easy experimentation with the source code
 
 ### Build the source from Github
 
@@ -27,19 +22,19 @@ It is recommended to also use the following for experimenting with the source co
 
 ### Start the Consumers in another console
 
-* Default npm script to start 2 consumers:
-`npm run start-consumers`
+Default npm script to start 2 consumers:
+* `npm run start-consumers`
 
-* If you want to flexibly specify number of consumers, then use:
-`node ./lib/consumers.js --consumers <n>`
+If you want to flexibly specify number of consumers, then use:
+* `node ./lib/consumers.js --consumers <n>`
 
-* The following cmdline options are available for starting consumers:
+The following cmdline options are available for starting consumers:
 * `--help` : <b>Display usage</b>
 * `--consumers` : <b>Integer number of consumers to instantiate</b>
 
 ### Running unit tests
 
-[Mocha](http://mochajs.org/) test framework is used to run unit tests via the following handy npm script:
+[Mocha](http://mochajs.org/) framework is used to run unit tests via the standard npm test script:
 * `npm test`
 
 ### Architecture
